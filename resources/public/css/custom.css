@@ -1,0 +1,22 @@
+.slant {
+	background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
+	opacity: 0;
+}
+
+#fh5co-work:before {
+	background-image: repeating-linear-gradient(to bottom right, #3f95ea 0%, #52d3aa 100%);
+	opacity: 0;
+}
+
+.navbar-brand img {
+	height:100px;
+	padding:0px;
+}
+
+.navbar-fixed-top .navbar-brand img {
+	height:50px;
+}
+
+.navbar-fixed-top .navbar-brand {
+	padding:5px;
+}
