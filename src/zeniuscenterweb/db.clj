@@ -13,3 +13,6 @@
 
 (defn scomp [compo]
       (jdbc/query dbase [(str "select * from components where component = '" compo "'")]))
+
+(defn c-update [compo content]
+      (jdbc/update! dbase :components {:content content} ["component = ?" compo]))

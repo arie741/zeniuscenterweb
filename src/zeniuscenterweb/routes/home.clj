@@ -3,7 +3,8 @@
             [compojure.route :as route]
             [net.cgrand.enlive-html :refer [deftemplate defsnippet] :as html]
             [zeniuscenterweb.db :as db]
-            [ring.util.anti-forgery :refer [anti-forgery-field]]))
+            [ring.util.anti-forgery :refer [anti-forgery-field]]
+            [ring.util.response :as resp]))
 
 ;;dbase
 (def c-landingtext1 
@@ -28,6 +29,9 @@
   (GET "/cms" []
   	(cms))
   (POST "/cms-action" {params :params}
-  	(str params))
+  	(do
+      (doseq [k (keys params)]
+        (db/c-update (apply str (rest (str k))) (k params)))
+      (resp/redirect "/")))
   (route/not-found "Not Found"))
 
