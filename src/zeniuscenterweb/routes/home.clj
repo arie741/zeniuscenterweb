@@ -7,26 +7,26 @@
             [ring.util.response :as resp]))
 
 ;;dbase
-(def c-landingtext1 
-	(str (apply :content (db/scomp "landingtext1"))))
+(def c-landing-page-large-text 
+	(str (apply :content (db/scomp "landing-page-large-text"))))
 
-(def c-landingtext2
-	(str (apply :content (db/scomp "landingtext2"))))
+(def program-section
+  (str (apply :content (db/scomp "program-section"))))
 
 ;;template
 
 (deftemplate home "public/index.html"
-  [landingtext1 landingtext2]
-  [:h1#landingtext1] (html/content landingtext1)
-  [:h2#landingtext2] (html/content landingtext2))
+  [landing-page-large-text program-section]
+  [:div#landing-page-large-text] (html/html-content landing-page-large-text)
+  [:div#program-section] (hmtl/html-content program-section))
 
 (deftemplate cms "public/cms.html"
 	[]
   [:form#cmsform] (html/append (html/html-snippet (anti-forgery-field))))
 
 (defroutes app-routes
-  (GET "/" [] (home c-landingtext1 c-landingtext2))
-  (GET "/cms" []
+  (GET "/" [] (home c-landing-page-large-text program-section))
+  (GET "/admin" []
   	(cms))
   (POST "/cms-action" {params :params}
   	(do
