@@ -16,3 +16,6 @@
 
 (defn c-update [compo content]
       (jdbc/update! dbase :components {:content content} ["component = ?" compo]))
+
+(defn acc [acc]
+      (jdbc/query dbase [(str "select * from accounts where username = '" acc "'")]))

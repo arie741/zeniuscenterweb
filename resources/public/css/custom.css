@@ -13,10 +13,37 @@
 	padding:0px;
 }
 
-.navbar-fixed-top .navbar-brand img {
+.navbar-fixed-top .navbar-brand img, .admin-header .navbar-brand img {
 	height:50px;
 }
 
-.navbar-fixed-top .navbar-brand {
+.navbar-fixed-top .navbar-brand, .admin-header .navbar-brand {
 	padding:5px;
+}
+
+#cmsform textarea {
+	width:100%;
+	height:400px;
+}
+
+#cms-content {
+	padding-top:90px;
+}
+
+.warning-msg {
+	color:red;
+}
+
+
+.admin-header {
+	background-color:#42ebf4;
+	margin-top:0 !important;
+}
+
+.admin-header span {
+	color:#000;
+}
+
+#fh5co-home{
+	background-image: url(images/full_image_2.jpg);
 }
