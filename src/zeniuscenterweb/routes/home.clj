@@ -69,7 +69,7 @@
   [:section#fh5co-testimonials] (html/html-content testimonial-section)
   [:section#fh5co-about] (html/html-content about-section)
   [:section#fh5co-contact] (html/html-content contact-section)
-  [:section#map] (html/html-content map-section)
+  [:div#map-section] (html/html-content map-section)
   [:footer#footer] (html/html-content footer-section)
   [:header#fh5co-header] (html/html-content header-section)
   [:style#css-section] (html/content css-section)
